@@ -1,62 +1,93 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto de Educación Superior Nuevo Horizonte</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
 
+        header {
+            background-color: #007bff;
+            padding: 10px 0;
+            color: white;
+        }
 
+        nav a {
+            color: white;
+            margin: 0 10px;
+        }
 
+        main {
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-       
-        <h1> <u>INSTITUTO DE EDUCACION "NUEVO HORIZONTE"</u></h1>
-        <img src="/img/inst.jpg">
-
-        <nav>
-            <a href="http://localhost:8080/"> INICIO </a>
-            <a href="http://localhost:8080/form"> ALUMNOS </a>
-            <a href="#"> DATOS ALUMNOS </a>
-       </nav>
-
+    <header class="fixed-top">
+        <div class="container">
+           
+            <h1> <u>INSTITUTO DE EDUCACION "NUEVO HORIZONTE"</u></h1>
+            
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <a class="btn btn-danger btn-lg"  href="http://localhost:8080/"> INICIO </a>
+                <a class="btn btn-danger btn-lg" href="http://localhost:8080/form"> ALUMNOS </a>
+                <a class="btn btn-danger btn-lg" href="http://localhost:8080/date"> DATOS ALUMNOS </a>
+           </nav>
+    
+        </div>
     </header>
 
     <main>
+        <br>
+        <br>
 
-   <form action="" method="post"> 
-    <label for="nombre">nombre:</label>
-<input type="text" id="nombre" name="nombre"><br> 
-
-<label for="apellido">apellido:</label>
-<input type="text" id="apellido" name="apellido"><br>
-
-<label for="dni">dni:</label>
-<input type="number" id="dni" name="dni"><br>
-
-<label for="direccion">direccion:</label>
-<input type="text" id="direccion" name="direccion"><br>
-
-<label for="telefono">telefono:</label>
-<input type="number" id="telefono" name="telefono"><br>
-
-<label for="fecha de Nac">fecha de Nac:</label>
-<input type="date" id="fecha de Nac" name="fecha de Nac"><br>
-
-<button type="submit"> Enviar </button>
-</form>
+        <br>
+        <br>
 
 
+        <div class="container">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion">
+                </div>
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="number" class="form-control" id="telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="number" class="form-control" id="dni" name="dni">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Formulario</button>
+            </form>
+        </div>
     </main>
-
 
     <footer>
 
-
     </footer>
 
+    
 </body>
-
 
 </html>

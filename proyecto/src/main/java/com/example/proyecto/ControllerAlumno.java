@@ -12,4 +12,9 @@ public class ControllerAlumno {
     public String formularioAlumno(){
         return "formularioAlumno";
 }
+
+@GetMapping ("/date")
+    public String datoAlumnos(){
+        return "datoAlumnos";
+}
 }
