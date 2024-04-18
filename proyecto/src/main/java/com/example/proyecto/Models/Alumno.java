@@ -13,9 +13,9 @@ import java.time.LocalDate;
 public class Alumno {
 
     @Id
-    private Integer dni;
+    private String dni;
     @Column (name = "state")
-    private Boolean state;
+    private Boolean state = true;
     @Column
     private String nombre;
     @Column
@@ -27,10 +27,10 @@ public class Alumno {
     @Column
     private LocalDate fechaNacimiento;
     
-    public Integer getDni(){
+    public String getDni(){
         return dni;
     }
-    public void setDni(Integer dni){
+    public void setDni(String dni){
         this.dni = dni;
     }
     public boolean getState(){
@@ -60,7 +60,7 @@ public class Alumno {
     public Integer getTelefono(){
         return telefono;
     }
-    public void setNombre(Integer telefono){
+    public void setTelefono(Integer telefono){
         this.telefono = telefono;
     }
     public LocalDate getFechaNacimiento(){
