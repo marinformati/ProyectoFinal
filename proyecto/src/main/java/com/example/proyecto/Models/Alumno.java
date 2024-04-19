@@ -23,7 +23,7 @@ public class Alumno {
     @Column
     private String direccion;
     @Column
-    private Integer telefono;
+    private String telefono;
     @Column
     private LocalDate fechaNacimiento;
     
@@ -57,10 +57,10 @@ public class Alumno {
     public void setDireccion(String direccion){
         this.direccion = direccion;
     }
-    public Integer getTelefono(){
+    public String getTelefono(){
         return telefono;
     }
-    public void setTelefono(Integer telefono){
+    public void setTelefono(String telefono){
         this.telefono = telefono;
     }
     public LocalDate getFechaNacimiento(){
