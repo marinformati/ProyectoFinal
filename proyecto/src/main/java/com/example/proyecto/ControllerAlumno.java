@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.example.proyecto.Service.AlumnoService;
 import com.example.proyecto.Models.Alumno;
+import java.util.List;  
 
 @Controller
 public class ControllerAlumno { 
@@ -23,14 +24,19 @@ public class ControllerAlumno {
         return "formularioAlumno";
 }
 
+@GetMapping("/date")
+public String tabla (Model model){
+    List<Alumno> listaAlumnos = alumnoService.obtenerTodosLosAlumnos();
+    model.addAttribute("listaAlumnos", listaAlumnos);
+    return "datoAlumnos";
+}
+
+
 @PostMapping("/guardarAlumno")
 public String guardarAlumno(@ModelAttribute Alumno alumno) {
     alumnoService.guardarAlumno(alumno);
     return "redirect:/";
 }
 
-@GetMapping ("/date")
-    public String datoAlumnos(){
-        return "datoAlumnos";
-}
+
 }
