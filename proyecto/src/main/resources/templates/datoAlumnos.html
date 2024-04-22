@@ -76,6 +76,11 @@
                         <td th:text="${alumno.fechaNacimiento}"></td>
                         <td th:text="${alumno.telefono}"></td>
                         <td th:text="${alumno.dni}"></td>
+                        <td>
+                            <form th:action="@{/eliminarAlumno/{dni} (dni=${alumno.dni})}" method="post"> 
+                                <button tipe="submit" class="btn btn-danger" > ELIMINAR </button>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>
