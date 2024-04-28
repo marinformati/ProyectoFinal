@@ -81,6 +81,11 @@
                                 <button tipe="submit" class="btn btn-danger" > ELIMINAR </button>
                             </form>
                         </td>
+                        <td>
+                            <form th:action="@{/editarAlumno/{dni} (dni=${alumno.dni})}" method="post"> 
+                                <button tipe="submit" class="btn btn-primary" > ACTUALIZAR </button>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class ControllerAlumno { 
+   
     @Autowired
     private AlumnoService alumnoService;
 
@@ -43,7 +44,7 @@ public String tabla (Model model){
 @PostMapping("/guardarAlumno")
 public String guardarAlumno(@ModelAttribute Alumno alumno) {
     alumnoService.guardarAlumno(alumno);
-    return "redirect:/";
+    return "redirect:/date";
 }
 
 @PostMapping ("/eliminarAlumno/{dni}")
@@ -53,7 +54,17 @@ public String eliminarAlumno (@PathVariable String dni) {
         alumno.setState(false);
         alumnoService.guardarAlumno(alumno);
     }
-    return "redirect:/date";
+    return "redirect:/guardarAlumno";
 }
 
+@PostMapping ("/editarAlumno/{dni}")
+public String editarAlumno(@PathVariable String dni, Model model){
+    Alumno alumno = alumnoService.buscarAlumnoConElDni(dni);
+    if (alumno != null) {
+    model.addAttribute("alumno", alumno);
+return "actualizarAlumno";
+} else {
+    return "redirect:/date";
+}
+}
 }
